@@ -1,27 +1,7 @@
 <?php
-session_start();
-
-require_once __DIR__ . "/../app/Controllers/UsersController.php";
-$err = "";
-$user = new UserController($con);
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $userLogin = $_POST['username'] ?? '';
-    $passwordLogin = $_POST['password'] ?? '';
-    $result = $user->getUser($userLogin);
-    if($result){
-        $row = $result[0];
-        if($userLogin === $row["username"] && $passwordLogin === $row["password"]){
-            $_SESSION['username'] = $userLogin;
-            header("Location: ../app/Views/dashboard.php");
-            exit;
-        }else{
-            $err = '<div class = "alert alert-danger">Invalid username or password</div>';
-        }
-    }else{
-        $err = '<div class "alert alert-danger role = "alert">User not Found</div>';
-    }
-
-}
+require_once __DIR__ . '/../config/bootstrap.php';
+header('Location: ' . BASE_URL . (Auth::check() ? '/dashboard.php' : '/login.php'));
+exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">

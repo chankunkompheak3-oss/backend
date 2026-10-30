@@ -1,0 +1,37 @@
+/* ---- extra icon colours for stat cards ---- */
+.icon-red{background:#fee2e2;color:#dc2626}
+.icon-teal{background:#ccfbf1;color:#0d9488}
+.icon-gray{background:#e5e7eb;color:#475569}
+
+/* ---- status badges (class = "status status-<lowercase-no-spaces>") ---- */
+.status{display:inline-block;padding:.25rem .6rem;border-radius:999px;font-size:.75rem;font-weight:600;white-space:nowrap}
+.status-approved,.status-available,.status-active,.status-paid,.status-completed{background:#dcfce7;color:#15803d}
+.status-pending,.status-reserved,.status-partial,.status-scheduled{background:#fef3c7;color:#b45309}
+.status-rejected,.status-cancelled,.status-unpaid,.status-outofservice,.status-blacklisted{background:#fee2e2;color:#b91c1c}
+.status-rented,.status-processing,.status-staff{background:#dbeafe;color:#1d4ed8}
+.status-maintenance{background:#ffedd5;color:#c2410c}
+.status-inactive,.status-refunded{background:#e5e7eb;color:#475569}
+.status-admin{background:#ede9fe;color:#6d28d9}
+
+/* ---- page tools / tables / forms ---- */
+.tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:1rem}
+.tools .form-control,.tools .form-select{max-width:220px}
+.tools .grow{flex:1;min-width:180px;max-width:320px}
+.thumb{width:56px;height:40px;object-fit:cover;border-radius:6px;background:#e5e7eb}
+.gallery{display:flex;flex-wrap:wrap;gap:.5rem}
+.gallery .g-item{position:relative;width:110px;font-size:.75rem;text-align:center}
+.gallery img{width:110px;height:76px;object-fit:cover;border-radius:8px;border:1px solid #e2e8f0}
+th[data-sort]{cursor:pointer;user-select:none}
+.crumbs{font-size:.75rem;color:#94a3b8;margin-bottom:.15rem}
+.quote-box{background:#f1f5f9;border-radius:10px;padding:.75rem 1rem;font-size:.9rem}
+.logout-btn{margin-left:auto;background:transparent;border:0;color:#94a3b8;font-size:1.1rem}
+.logout-btn:hover{color:#fff}
+.menu-toggle{display:none;border:0;background:#fff;border-radius:8px;padding:.4rem .7rem}
+
+/* ---- small screens: sidebar slides in ---- */
+@media (max-width: 991px){
+  .left-bar{transform:translateX(-100%);transition:transform .25s;z-index:1040}
+  .left-bar.open{transform:none}
+  .contain{margin-left:0 !important;width:100% !important}
+  .menu-toggle{display:inline-block}
+}

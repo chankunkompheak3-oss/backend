@@ -3,7 +3,6 @@
     $_SESSION = [];
 
     session_destroy();
-    header("Location: idex.php");
+    header("Location: ../../public/index.php");
     exit;
-
 ?>
